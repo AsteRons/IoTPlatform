@@ -1,5 +1,6 @@
-package com.pw.saif.iotplatform.server.iotplatform.SensorsData.model;
+package com.pw.saif.iotplatform.server.iotplatform.Sensor.model;
 
+import com.pw.saif.iotplatform.server.iotplatform.SensorsData.model.SensorData;
 import com.pw.saif.iotplatform.server.iotplatform.Users.model.User;
 
 import javax.persistence.*;

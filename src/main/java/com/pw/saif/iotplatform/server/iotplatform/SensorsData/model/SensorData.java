@@ -2,7 +2,8 @@ package com.pw.saif.iotplatform.server.iotplatform.SensorsData.model;
 
 
 import java.util.Date;
-import com.pw.saif.iotplatform.server.iotplatform.Users.model.User;
+
+import com.pw.saif.iotplatform.server.iotplatform.Sensor.model.Sensor;
 
 import javax.persistence.*;
 import lombok.*;

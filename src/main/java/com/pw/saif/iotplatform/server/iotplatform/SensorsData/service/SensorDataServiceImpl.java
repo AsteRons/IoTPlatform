@@ -35,7 +35,7 @@ public class SensorDataServiceImpl implements SensorDataService{
         }
         else {
             // we didn't find the employee
-            throw new RuntimeException("Did not find employee id - " + theId);
+            throw new RuntimeException("Did not find sensorData id - " + theId);
         }
         return theSensorData;
     }
