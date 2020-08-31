@@ -147,7 +147,7 @@
                     <th>Login</th>
                     <th>Password</th>
                     <th>Permissions</th>
-                    <th>Sensor</th>
+                    <th>Sensor ID</th>
                   </tr>
                 </thead>
                   <tbody>
@@ -158,7 +158,10 @@
                       <td th:text="${tempUserService.login}">
                       <td th:text="${tempUserService.password}">
                       <td th:text="${tempUserService.permissions}">
-                      <td><button type="button" class="btn btn-primary" name="viewSensor">View</button></td>
+                      <td>
+        <span th:each="sensor,iterStat : ${tempUserService.sensor}">
+        <span th:text="${sensor.id}"/><th:block th:if="${!iterStat.last}">,</th:block></span>
+                      </td>
                   </tr>
                   </tbody>
               </table>

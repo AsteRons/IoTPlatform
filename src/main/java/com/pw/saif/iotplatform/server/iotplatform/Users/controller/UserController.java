@@ -1,6 +1,8 @@
 package com.pw.saif.iotplatform.server.iotplatform.Users.controller;
 
 
+import com.pw.saif.iotplatform.server.iotplatform.Sensor.model.Sensor;
+import com.pw.saif.iotplatform.server.iotplatform.Sensor.service.SensorService;
 import com.pw.saif.iotplatform.server.iotplatform.Users.model.User;
 import com.pw.saif.iotplatform.server.iotplatform.Users.service.UserService;
 import org.springframework.stereotype.Controller;
@@ -15,10 +17,12 @@ public class UserController {
 
     private  UserService userService;
 
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
+    private SensorService sensorService;
 
+    public UserController(UserService userService, SensorService sensorService) {
+        this.userService = userService;
+        this.sensorService = sensorService;
+    }
 
     // add mapping for "/list"
     @RequestMapping("/list")
@@ -26,7 +30,6 @@ public class UserController {
 
         List<User> theUserService = userService.findAll();
         theModel.addAttribute("userService", theUserService);
-
         return "user/list";
 
     }
