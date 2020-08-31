@@ -38,7 +38,7 @@ public class User {
 
     @ManyToMany
     @JoinColumn(name = "sensor_id")
-    private Set<Sensor> user = new HashSet<>();
+    private Set<Sensor> sensor = new HashSet<>();
 
 
     @Override
