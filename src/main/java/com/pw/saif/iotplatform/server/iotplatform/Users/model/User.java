@@ -3,7 +3,11 @@ package com.pw.saif.iotplatform.server.iotplatform.Users.model;
 
 import javax.persistence.*;
 
+import com.pw.saif.iotplatform.server.iotplatform.Sensor.model.Sensor;
 import lombok.*;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Setter
 @Getter
@@ -31,6 +35,10 @@ public class User {
 
     @Column(name="permissions")
     private String permissions;
+
+    @ManyToMany
+    @JoinColumn(name = "sensor_id")
+    private Set<Sensor> user = new HashSet<>();
 
 
     @Override

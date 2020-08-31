@@ -10,11 +10,11 @@ import lombok.*;
 
 @Setter
 @Getter
-@NoArgsConstructor
-@AllArgsConstructor
-@Entity
-@Table(name="sensor")
-public class Sensor {
+    @NoArgsConstructor
+    @AllArgsConstructor
+    @Entity
+    @Table(name="sensor")
+    public class Sensor {
 
 
     @Id
@@ -29,4 +29,9 @@ public class Sensor {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "sensor")
     private Set<SensorData> sensorData = new HashSet<>();
+
+    @ManyToMany(cascade = CascadeType.ALL, mappedBy ="sensor")
+    private Set<User> user = new HashSet<>();
+
+
 }
