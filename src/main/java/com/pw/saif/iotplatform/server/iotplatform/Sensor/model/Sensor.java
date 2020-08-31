@@ -30,7 +30,7 @@ import lombok.*;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "sensor")
     private Set<SensorData> sensorData = new HashSet<>();
 
-    @ManyToMany(cascade = CascadeType.ALL, mappedBy ="sensor")
+    @ManyToMany(mappedBy ="sensor")
     private Set<User> user = new HashSet<>();
 
 

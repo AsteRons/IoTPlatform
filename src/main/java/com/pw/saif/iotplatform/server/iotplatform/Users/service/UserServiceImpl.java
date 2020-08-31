@@ -43,8 +43,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void save(User theSensorData) {
-        userRepository.save(theSensorData);
+    public void save(User theUser) {
+        userRepository.save(theUser);
     }
 
     @Override

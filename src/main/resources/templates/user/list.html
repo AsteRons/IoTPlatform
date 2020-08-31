@@ -142,20 +142,25 @@
                 <thead>
                   <tr>
                     <th>#</th>
-                    <th>DeviceId</th>
-                    <th>Measurement</th>
-                    <th>TimeStamp</th>
+                    <th>FirstName</th>
+                    <th>LastName</th>
+                    <th>Login</th>
+                    <th>Password</th>
+                    <th>Permissions</th>
+                    <th>Sensor</th>
                   </tr>
                 </thead>
-                <tbody>
-                    <tr  th:each="tempSensorData : ${sensorData}">
-                        <td th:text="${tempSensorData.id}">
-                        <td th:text="${tempSensorData.sensor.id}">
-                        <td th:text="${tempSensorData.ntuValue}">
-                        <td th:text="${tempSensorData.timestamp}">
-                        <td th:text="${tempSensorData.sensor.id}">
-                   </tr>
-                </tbody>
+                  <tbody>
+                  <tr  th:each="tempUserService : ${userService}">
+                      <td th:text="${tempUserService.id}">
+                      <td th:text="${tempUserService.firstName}">
+                      <td th:text="${tempUserService.lastName}">
+                      <td th:text="${tempUserService.login}">
+                      <td th:text="${tempUserService.password}">
+                      <td th:text="${tempUserService.permissions}">
+                      <td><button type="button" class="btn btn-primary" name="viewSensor">View</button></td>
+                  </tr>
+                  </tbody>
               </table>
             </div>
           </main>
