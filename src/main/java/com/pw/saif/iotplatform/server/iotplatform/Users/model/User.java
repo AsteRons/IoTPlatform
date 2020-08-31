@@ -21,10 +21,10 @@ public class User {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int id;
 
-    @Column(name="firstName")
+    @Column(name="firstname")
     private String firstName;
 
-    @Column(name="lastName")
+    @Column(name="lastname")
     private String lastName;
 
     @Column(name="login")
@@ -37,7 +37,9 @@ public class User {
     private String permissions;
 
     @ManyToMany
-    @JoinColumn(name = "sensor_id")
+    @JoinTable(name = "user_sensor",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "sensor_id"))
     private Set<Sensor> sensor = new HashSet<>();
 
 

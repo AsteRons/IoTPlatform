@@ -4,8 +4,7 @@ package com.pw.saif.iotplatform.server.iotplatform.Users.service;
 import java.util.List;
 import java.util.Optional;
 
-import com.pw.saif.iotplatform.server.iotplatform.SensorsData.dao.SensorDataRepository;
-import com.pw.saif.iotplatform.server.iotplatform.SensorsData.model.SensorData;
+
 import com.pw.saif.iotplatform.server.iotplatform.Users.dao.UserRepository;
 import com.pw.saif.iotplatform.server.iotplatform.Users.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,8 +43,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void save(User theSensorData) {
-        userRepository.save(theSensorData);
+    public void save(User theUser) {
+        userRepository.save(theUser);
     }
 
     @Override

@@ -1,7 +1,5 @@
 package com.pw.saif.iotplatform.server.iotplatform.SensorsData.controller;
 
-import com.pw.saif.iotplatform.server.iotplatform.Sensor.model.Sensor;
-import com.pw.saif.iotplatform.server.iotplatform.Sensor.service.SensorService;
 import com.pw.saif.iotplatform.server.iotplatform.SensorsData.service.SensorDataService;
 import com.pw.saif.iotplatform.server.iotplatform.SensorsData.model.SensorData;
 
