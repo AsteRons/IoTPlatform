@@ -148,6 +148,7 @@
                     <th>Password</th>
                     <th>Permissions</th>
                     <th>Sensor ID</th>
+                    <th>View User</th>
                   </tr>
                 </thead>
                   <tbody>
@@ -161,6 +162,11 @@
                       <td>
         <span th:each="sensor,iterStat : ${tempUserService.sensor}">
         <span th:text="${sensor.id}"/><th:block th:if="${!iterStat.last}">,</th:block></span>
+                      </td>
+                      <td>
+                          <a class="btn btn-default" href="#"
+                             th:href="@{'/user/' + ${tempUserService.id} + '/view'}"
+                             role="button">View</a>
                       </td>
                   </tr>
                   </tbody>
