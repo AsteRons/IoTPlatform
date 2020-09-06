@@ -1,10 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saif IoT Platform</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap&subset=latin-ext" rel="stylesheet">
+
+    <link href="/css/style.css" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/beb21d8422.js" crossorigin="anonymous"></script>
+    <!-- Custom styles for this template -->
+
 </head>
+
+<!-- Menu górne-->
 <body>
-$END$
+<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+
+    <a class="navbar-brand col-md-2 col-lg-2 mr-1" href="#">
+        SAIF IoT Platform
+    </a>
+
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <input class="form-control form-control w-80" type="text" placeholder="Search" aria-label="Search">
+
+    <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+            <a class="nav-link" href="#">Sign out</a>
+        </li>
+    </ul>
+
+</nav>
+
+<!--START -->
+<div class="container-fluid">
+    <div class="row">
+
+        <!--Menu START-->
+        <nav id="sidebarMenu" class="col-md-2 col-lg-2 d-md-block bg-dark sidebar collapse px-2">
+
+            <div class="sidebar-sticky pt-3">
+                <ul class="nav flex-column">
+
+                    <li class="nav-item  px-2">
+                        <a class="nav-link menu-select" href="#">Dashboard<span class="sr-only">(current)<span>
+                        </a>
+                    </li>
+
+                    <a class="nav-link menu-select" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fas fa-network-wired px-2"></i>Sensors</a>
+                    <div id="submenu-1" class="collapse">
+                        <ul class="nav nav-small flex-column">
+                            <li class="nav-item">
+                                <div class="menu-select-1 px-4">
+                                    <a class="nav-link" href="/sensor/list">My Sensors</a>
+                                    <a class="nav-link" href="sensors.pl">Add Sensor</a>
+                                    <a class="nav-link" href="sensors.pl">Configuration</a>
+
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a class="nav-link menu-select" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="fas fa-database px-2"></i>Data</a>
+                    <div id="submenu-2" class="collapse">
+                        <ul class="nav nav-small flex-column">
+                            <li class="nav-item">
+                                <div class="menu-select-1 px-4">
+                                    <a class="nav-link" href="sensors.pl">My Data</a>
+                                    <a class="nav-link" href="sensors.pl">View</a>
+                                    <a class="nav-link" href="sensors.pl">Data operations</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a class="nav-link menu-select" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3"><i class="fas fa-exclamation-circle px-2"></i>Alarm</a>
+                    <div id="submenu-3" class="collapse">
+                        <ul class="nav nav-small flex-column">
+                            <li class="nav-item">
+                                <div class="menu-select-1 px-4">
+                                    <a class="nav-link" href="sensors.pl">Alarm</a>
+                                    <a class="nav-link" href="sensors.pl">Monitornig</a>
+                                    <a class="nav-link" href="sensors.pl">Notification</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a class="nav-link menu-select" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="fas fa-wifi px-2"></i>Conncection</a>
+                    <div id="submenu-4" class="collapse">
+                        <ul class="nav nav-small flex-column">
+                            <li class="nav-item">
+                                <div class="menu-select-1 px-4">
+                                    <a class="nav-link" href="sensors.pl">Sensors</a>
+                                    <a class="nav-link" href="sensors.pl">Applications</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a class="nav-link menu-select" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="fas fa-users px-2"></i>Users</a>
+                    <div id="submenu-5" class="collapse">
+                        <ul class="nav nav-small flex-column">
+                            <li class="nav-item">
+                                <div class="menu-select-1 px-4">
+                                    <a class="nav-link" href="/user/list">My User</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </ul>
+            </div>
+        </nav>
+
+        <!--END Menu-->
+        
+</div>
+</div>
+<!--END-->
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+</script>
 </body>
 </html>

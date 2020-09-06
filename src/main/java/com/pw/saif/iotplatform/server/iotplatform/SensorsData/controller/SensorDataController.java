@@ -24,8 +24,6 @@ public class SensorDataController {
 
     }
 
-
-
     // add mapping for "/list"
     @RequestMapping("/list")
     public String showMyMainPage(ModelMap theModel) {

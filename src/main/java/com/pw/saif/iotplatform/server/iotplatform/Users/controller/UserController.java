@@ -26,17 +26,6 @@ public class UserController {
         this.sensorService = sensorService;
     }
 
-    // add mapping for "/list"
-    @RequestMapping("/{id}/view")
-    public String viewUser(@PathVariable String id, ModelMap theModel) {
-
-        User theUserService = userService.findById(Integer.valueOf(id));
-        Set<Sensor> sensors = theUserService.getSensor();
-
-        theModel.addAttribute("theSensors", sensors);
-        return "user/viewUser";
-
-    }
 
     @RequestMapping("/list")
     public String viewUsersList(ModelMap theModel) {
