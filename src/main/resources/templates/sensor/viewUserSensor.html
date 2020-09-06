@@ -141,8 +141,10 @@
                 <thead>
                 <tr>
                     <th>#</th>
-                    <th>importance</th>
-                    <th>url</th>
+                    <th>Importance</th>
+                    <th>Url</th>
+                    <th>Alarm</th>
+                    <th>Connection</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -150,12 +152,23 @@
                     <td th:text="${tempSensors.id}">
                     <td th:text="${tempSensors.importance}">
                     <td th:text="${tempSensors.url}">
+                    <td>
+                        <a class="btn btn-default" href="#"
+                           th:href="@{'/sensor/alarm/' + ${tempSensors.id} + '/view'}"
+                           role="button">View</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-default" href="#"
+                           th:href="@{'/sensor/connection/' + ${tempSensors.id} + '/view'}"
+                           role="button">View</a>
+                    </td>
+
                 </tr>
                 </tbody>
             </table>
     </div>
     </main>
-    
+
 </div>
 </div>
 <!--END-->
