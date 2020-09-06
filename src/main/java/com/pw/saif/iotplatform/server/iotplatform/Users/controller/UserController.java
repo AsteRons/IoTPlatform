@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
+import java.util.Set;
 
 @Controller
 @RequestMapping("/user")
@@ -30,15 +31,15 @@ public class UserController {
     public String viewUser(@PathVariable String id, ModelMap theModel) {
 
         User theUserService = userService.findById(Integer.valueOf(id));
-        theModel.addAttribute("userService", theUserService);
+        Set<Sensor> sensors = theUserService.getSensor();
+
+        theModel.addAttribute("theSensors", sensors);
         return "user/viewUser";
 
     }
 
-
     @RequestMapping("/list")
     public String viewUsersList(ModelMap theModel) {
-
         List<User> theUserService = userService.findAll();
         theModel.addAttribute("userService", theUserService);
         return "user/listUser";

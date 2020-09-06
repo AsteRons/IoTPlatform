@@ -121,7 +121,8 @@
             </div>
         </nav>
 
-        <!--tresc Menu-->
+        <!--END Menu-->
+
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <h1 class="h2">Dashboard</h1>
@@ -141,21 +142,22 @@
                 <thead>
                 <tr>
                     <th>#</th>
-                    <th>importance</th>
-                    <th>url</th>
+                    <th>DeviceId</th>
+                    <th>Measurement</th>
+                    <th>TimeStamp</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr  th:each="tempSensors : ${theSensors}">
-                    <td th:text="${tempSensors.id}">
-                    <td th:text="${tempSensors.importance}">
-                    <td th:text="${tempSensors.url}">
+
+                <tr  th:each="tempSensor : ${sensor}">
+                    <td th:text="${tempSensor.id}">
+                    <td th:text="${tempSensor.importance}">
+                    <td th:text="${tempSensor.url}">
                 </tr>
                 </tbody>
             </table>
     </div>
     </main>
-    
 </div>
 </div>
 <!--END-->
