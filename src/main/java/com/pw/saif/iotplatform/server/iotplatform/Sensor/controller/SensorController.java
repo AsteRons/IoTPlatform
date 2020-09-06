@@ -31,9 +31,9 @@ public class SensorController {
 
         List<Sensor> theSensor = sensorService.findAll();
 
-        theModel.addAttribute("sensor", theSensor);
+        theModel.addAttribute("theSensors", theSensor);
 
-        return "sensor/list";
+        return "sensor/viewUserSensor";
 
     }
 
