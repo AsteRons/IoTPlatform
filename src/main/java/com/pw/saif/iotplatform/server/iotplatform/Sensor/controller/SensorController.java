@@ -48,10 +48,15 @@ public class SensorController {
         return "sensor/viewUserSensor";
     }
 
-    // add mapping for "/list"
     @RequestMapping("/connection/{id}/view")
     public String viewSensorConnection(@PathVariable String id, ModelMap theModel) {
 
         return "sensor/viewSensorConnectionList";
+    }
+
+    @RequestMapping("/dashboard/{id}/view")
+    public String viewSensorDashboard(@PathVariable String id, ModelMap theModel) {
+
+        return "sensor/viewSensorDashboardList";
     }
 }
