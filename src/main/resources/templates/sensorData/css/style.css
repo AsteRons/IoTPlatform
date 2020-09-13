@@ -1,5 +1,6 @@
 body {
   font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .feather {
@@ -77,6 +78,13 @@ body {
 .sidebar-heading {
   font-size: .75rem;
   text-transform: uppercase;
+}
+
+/* Panel */
+
+
+.panel-right {
+
 }
 
 /*

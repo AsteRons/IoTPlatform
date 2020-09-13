@@ -59,4 +59,11 @@ public class SensorController {
 
         return "sensor/viewSensorDashboardList";
     }
+
+    @RequestMapping("/{id}/view")
+    public String viewSensorDetails(@PathVariable String id, ModelMap theModel) {
+
+        return "sensor/viewSensorDetails";
+    }
+
 }

@@ -121,64 +121,9 @@
             </div>
         </nav>
 
-        <!--tresc Menu-->
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2">Dashboard</h1>
-                <div class="btn-toolbar mb-2 mb-md-0">
-                    <div class="btn-group mr-2">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-                    </div>
-                    <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                        This week
-                    </button>
-                </div>
-            </div>
-            <h2>Section title</h2>
-            <div class="table-responsive"></div>
-            <table class="table  table-hover table-striped table-sm">
-                <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Importance</th>
-                    <th>Url</th>
-                    <th>Details</th>
-                    <th>Dashboard</th>
-                    <th>Connection</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr  th:each="tempSensors : ${theSensors}">
-                    <td th:text="${tempSensors.id}">
-                    <td th:text="${tempSensors.importance}">
-                    <td th:text="${tempSensors.url}">
+        <!--END Menu-->
 
-                    <td>
-                        <a class="btn btn-default" href="#"
-                           th:href="@{'/sensor/' + ${tempSensors.id} + '/view'}"
-                           role="button">View</a>
-                    </td>
-
-                    <td>
-                        <a class="btn btn-default" href="#"
-                           th:href="@{'/dashboard/' + ${tempSensors.id} + '/view'}"
-                           role="button">View</a>
-                    </td>
-
-                    <td>
-                        <a class="btn btn-default" href="#"
-                           th:href="@{'/sensor/connection/' + ${tempSensors.id} + '/view'}"
-                           role="button">View</a>
-                    </td>
-
-                </tr>
-                </tbody>
-            </table>
     </div>
-    </main>
-
-</div>
 </div>
 <!--END-->
 
