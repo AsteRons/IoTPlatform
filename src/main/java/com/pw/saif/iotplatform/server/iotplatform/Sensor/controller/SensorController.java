@@ -66,4 +66,5 @@ public class SensorController {
         return "sensor/viewSensorDetails";
     }
 
+
 }

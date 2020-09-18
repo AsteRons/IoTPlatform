@@ -141,8 +141,9 @@
                 <thead>
                 <tr>
                     <th>#</th>
+                    <th>Name</th>
+                    <th>Localisation</th>
                     <th>Importance</th>
-                    <th>Url</th>
                     <th>Details</th>
                     <th>Dashboard</th>
                     <th>Connection</th>
@@ -151,8 +152,9 @@
                 <tbody>
                 <tr  th:each="tempSensors : ${theSensors}">
                     <td th:text="${tempSensors.id}">
+                    <td th:text="${tempSensors.name}">
+                    <td th:text="${tempSensors.place}">
                     <td th:text="${tempSensors.importance}">
-                    <td th:text="${tempSensors.url}">
 
                     <td>
                         <a class="btn btn-default" href="#"

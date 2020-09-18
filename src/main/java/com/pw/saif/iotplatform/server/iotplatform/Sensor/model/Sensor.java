@@ -16,7 +16,6 @@ import lombok.*;
     @Table(name="sensor")
     public class Sensor {
 
-
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
@@ -33,5 +32,15 @@ import lombok.*;
     @ManyToMany(mappedBy ="sensor")
     private Set<User> user = new HashSet<>();
 
+    @Column(name="name")
+    public String name;
 
+    @Column(name="place")
+    public String place;
+
+    @Column(name="measurementFrequency")
+    public String measurementFrequency;
+
+    @Column(name="accuracy")
+    public String accuracy;
 }
