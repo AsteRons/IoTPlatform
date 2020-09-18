@@ -20,6 +20,9 @@ body {
   font-size: 1.2rem
 }
 
+
+/* chart */
+
 /*
  * Sidebar
  */
@@ -43,7 +46,7 @@ body {
 .sidebar-sticky {
   position: relative;
   top: 0;
-  height: calc(100vh - 48px);
+  height: calc(80vh - 48px);
   padding-top: .5rem;
   overflow-x: hidden;
   overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
@@ -81,12 +84,6 @@ body {
 }
 
 /* Panel */
-
-
-.panel-right {
-
-}
-
 /*
  * Navbar
  */

@@ -43,10 +43,7 @@
 <div class="container">
     <div class="row">
         <main>
-
-
             <nav id="sidebarMenu" class="col-md-2 col-lg-2 d-md-block bg-dark sidebar collapse px-2">
-
                 <div class="sidebar-sticky pt-3">
                     <ul class="nav flex-column">
 
@@ -122,14 +119,11 @@
                 </div>
             </nav>
 
-            <div class= "panel-right">
-                <section class="content">
-                    <div class="container py-2">
-                        <div id="container" style="width: 1800px; height: 800px; margin: 0 auto"></div>
+                <section class="text-center px-2">
+                    <div class="container py-3">
+                        <div id="chart1" style="width: 1400px; height: 800px; margin: auto"></div>
                     </div>
                 </section>
-            </div>
-
         </main>
     </div>
 </div>
@@ -151,7 +145,7 @@
 
 <script th:inline="javascript">
     $(function(){
-        Highcharts.chart('container', {
+        Highcharts.chart('chart1', {
             chart: {
                 type: 'line'
             },
