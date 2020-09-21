@@ -62,7 +62,9 @@ public class SensorController {
 
     @RequestMapping("/{id}/view")
     public String viewSensorDetails(@PathVariable String id, ModelMap theModel) {
+        Sensor thesensorService = sensorService.findById(Integer.valueOf(id));
 
+        theModel.addAttribute("theSensorDetails", thesensorService);
         return "sensor/viewSensorDetails";
     }
 

@@ -43,4 +43,7 @@ import lombok.*;
 
     @Column(name="accuracy")
     public String accuracy;
+
+    @Column(name="descriptions")
+    public String descriptions;
 }

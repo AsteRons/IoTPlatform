@@ -122,26 +122,26 @@
         <div class="container">
 
             <div class="col-lg-6 m-5 justify-content-center">
-                <img th:src="${theSensorDetails.url}" width="250" height="250">
+                <img src="./image/images_temp.png" width="250" height="250">
               </div>  
             <div class="row justify-content-center mt-5">
   
                     <div class="col-lg-2 mb-3 mt-4">
                         <ul class="nav nav-tabs flex-lg-column" role="tablist">
                             <li class="nav-item">
-                            <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true">Sensor Details</a>
+                            <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true">Your Profile</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" id="password-tab" data-toggle="tab" href="#password" role="tab" aria-controls="password" aria-selected="false">Users</a>
+                            <a class="nav-link" id="password-tab" data-toggle="tab" href="#password" role="tab" aria-controls="password" aria-selected="false">Password</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" id="notifications-tab" data-toggle="tab" href="#notifications" role="tab" aria-controls="notifications" aria-selected="false">Alarm</a>
+                            <a class="nav-link" id="notifications-tab" data-toggle="tab" href="#notifications" role="tab" aria-controls="notifications" aria-selected="false">Email Notifications</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" id="billing-tab" data-toggle="tab" href="#billing" role="tab" aria-controls="billing" aria-selected="false">Connection</a>
+                            <a class="nav-link" id="billing-tab" data-toggle="tab" href="#billing" role="tab" aria-controls="billing" aria-selected="false">Billing Details</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" id="integrations-tab" data-toggle="tab" href="#integrations" role="tab" aria-controls="integrations" aria-selected="false">Data</a>
+                            <a class="nav-link" id="integrations-tab" data-toggle="tab" href="#integrations" role="tab" aria-controls="integrations" aria-selected="false">Integrations</a>
                             </li>
                         </ul>
                     </div>  
@@ -150,55 +150,46 @@
               <div class="card">
                 <div class="card-body">
                   <div class="tab-content">
-                    <!-- START-->
                     <div class="tab-pane fade show active" role="tabpanel" id="profile">
                       
                       <!--end of avatar-->
-                     
+                      <form>
                         <div class="form-group row align-items-center">
-                          <label class="col-3">Name:</label>
+                          <label class="col-3">First Name</label>
                           <div class="col">
-                            <p th:text="${theSensorDetails.name}">Name</p>
+                            <input type="text" placeholder="First name" value="David" name="profile-first-name" class="form-control" required />
                           </div>
                         </div>
                         <div class="form-group row align-items-center">
-                          <label class="col-3">Location:</label>
+                          <label class="col-3">Last Name</label>
                           <div class="col">
-                           <p th:text="${theSensorDetails.place}">Location</p>
+                            <input type="text" placeholder="First name" value="Whittaker" name="profile-last-name" class="form-control" />
                           </div>
                         </div>
                         <div class="form-group row align-items-center">
-                          <label class="col-3">Importance:</label>
+                          <label class="col-3">Email</label>
                           <div class="col">
-                            <p th:text="${theSensorDetails.importance}">Importance</p>
+                            <input type="email" placeholder="Enter your email address" name="profile-email" class="form-control" required />
                           </div>
                         </div>
                         <div class="form-group row align-items-center">
-                          <label class="col-3">Measurement Frequency:</label>
+                          <label class="col-3">Location</label>
                           <div class="col">
-                           <p th:text="${theSensorDetails.measurementFrequency}">MeasurementFrequency</p>
+                            <input type="text" placeholder="Enter your location" name="profile-location" class="form-control" />
                           </div>
                         </div>
-                        <div class="form-group row align-items-center">
-                          <label class="col-3">Accuracy:</label>
-                          <div class="col">
-                           <p th:text="${theSensorDetails.accuracy}">Accuracy</p>
-                          </div>
-                        </div>
-                      
                         <div class="form-group row">
-                          <label class="col-3">Descriptions:</label>
+                          <label class="col-3">Bio</label>
                           <div class="col">
-                            <textarea th:placeholder="${theSensorDetails.descriptions}" name="profile-bio" class="form-control" rows="4"></textarea>
+                            <textarea placeholder="Tell us a little about yourself" name="profile-bio" class="form-control" rows="4"></textarea>
                             <small>This will be displayed on your public profile</small>
                           </div>
                         </div>
                         <div class="row justify-content-end">
-                          <button class="btn btn-dark">Edit</button>
+                          <button type="submit" class="btn btn-primary">Save</button>
                         </div>
-                     
+                      </form>
                     </div>
-                    <!-- END-->
                     <div class="tab-pane fade" role="tabpanel" id="password">
                       <form>
                         <div class="form-group row align-items-center">
