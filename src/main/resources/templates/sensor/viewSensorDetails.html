@@ -129,10 +129,10 @@
                     <div class="col-lg-2 mb-3 mt-4">
                         <ul class="nav nav-tabs flex-lg-column" role="tablist">
                             <li class="nav-item">
-                            <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true">Sensor Details</a>
+                            <a class="nav-link active" id="sensordetail-tab" data-toggle="tab" href="#sensordetail" role="tab" aria-controls="sensordetail" aria-selected="true">Sensor Details</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" id="password-tab" data-toggle="tab" href="#password" role="tab" aria-controls="password" aria-selected="false">Users</a>
+                            <a class="nav-link" id="user-tab" data-toggle="tab" href="#user" role="tab" aria-controls="user" aria-selected="false">Users</a>
                             </li>
                             <li class="nav-item">
                             <a class="nav-link" id="notifications-tab" data-toggle="tab" href="#notifications" role="tab" aria-controls="notifications" aria-selected="false">Alarm</a>
@@ -150,8 +150,7 @@
               <div class="card">
                 <div class="card-body">
                   <div class="tab-content">
-                    <!-- START-->
-                    <div class="tab-pane fade show active" role="tabpanel" id="profile">
+                    <div class="tab-pane fade show active" role="tabpanel" id="sensordetail">
                       
                       <!--end of avatar-->
                      
@@ -198,33 +197,43 @@
                         </div>
                      
                     </div>
-                    <!-- END-->
-                    <div class="tab-pane fade" role="tabpanel" id="password">
-                      <form>
-                        <div class="form-group row align-items-center">
-                          <label class="col-3">Current Password</label>
-                          <div class="col">
-                            <input type="password" placeholder="Enter your current password" name="password-current" class="form-control" />
-                          </div>
+                      <!-- START-->
+                    <div class="tab-pane fade" role="tabpanel" id="user">
+                        <p>User List:</p>
+                        <table>
+                            <tbody>
+                            <tr  th:each="temptheUserList : ${theUserList}">
+                                <td class="py-2">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row align-items-center">
+                                                <div class="col">
+                                                    <div class="media align-items-center">
+                                                        <img alt="Image" src="/image/user-icon.png" width="60" height="60" />
+                                                        <div class="media-body ml-4">
+                                                            <span class="h6 mb-2 d-block" th:text="${temptheUserList.firstName} + ' ' + ${temptheUserList.lastName}">Slack</span>
+                                                            <span class="text-small text-muted" th:text="${temptheUserList.permissions}">Permissions: Read, Write, Comment</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <button class="btn btn-sm btn-danger">
+                                                        Edit
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        
+                        <div class="row justify-content-end py-2">
+                          <button type="submit" class="btn btn-dark">Add</button>
                         </div>
-                        <div class="form-group row align-items-center">
-                          <label class="col-3">New Password</label>
-                          <div class="col">
-                            <input type="password" placeholder="Enter a new password" name="password-new" class="form-control" />
-                            <small>Password must be at least 8 characters long</small>
-                          </div>
-                        </div>
-                        <div class="form-group row align-items-center">
-                          <label class="col-3">Confirm Password</label>
-                          <div class="col">
-                            <input type="password" placeholder="Confirm your new password" name="password-new-confirm" class="form-control" />
-                          </div>
-                        </div>
-                        <div class="row justify-content-end">
-                          <button type="submit" class="btn btn-primary">Change Password</button>
-                        </div>
-                      </form>
                     </div>
+                      <!-- STOP-->
                     <div class="tab-pane fade" role="tabpanel" id="notifications">
                       <form>
                         <h6>Activity Notifications</h6>

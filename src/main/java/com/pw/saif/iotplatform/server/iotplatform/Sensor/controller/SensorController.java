@@ -64,7 +64,10 @@ public class SensorController {
     public String viewSensorDetails(@PathVariable String id, ModelMap theModel) {
         Sensor thesensorService = sensorService.findById(Integer.valueOf(id));
 
+        Set<User> theUser = thesensorService.getUser();
+
         theModel.addAttribute("theSensorDetails", thesensorService);
+        theModel.addAttribute("theUserList", theUser);
         return "sensor/viewSensorDetails";
     }
 
