@@ -201,17 +201,18 @@
                     <div class="tab-pane fade" role="tabpanel" id="user">
                         <p>User List:</p>
                         <table>
-                            <tbody>
-                            <tr  th:each="temptheUserList : ${theUserList}">
-                                <td class="py-2">
+                            
+                            <th:block  th:each="temptheUserList : ${theUserList}">
+                             <div class="py-1">
+                                <tr>
                                     <div class="card">
                                         <div class="card-body">
                                             <div class="row align-items-center">
                                                 <div class="col">
                                                     <div class="media align-items-center">
                                                         <img alt="Image" src="/image/user-icon.png" width="60" height="60" />
-                                                        <div class="media-body ml-4">
-                                                            <span class="h6 mb-2 d-block" th:text="${temptheUserList.firstName} + ' ' + ${temptheUserList.lastName}">Slack</span>
+                                                        <div class="media-body ml-2">
+                                                            <span class="h6 mb-0 d-block" th:text="${temptheUserList.firstName} + ' ' + ${temptheUserList.lastName}">Slack</span>
                                                             <span class="text-small text-muted" th:text="${temptheUserList.permissions}">Permissions: Read, Write, Comment</span>
                                                         </div>
                                                     </div>
@@ -224,9 +225,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                </td>
-                            </tr>
-                            </tbody>
+                                </tr>
+                            </div>
+                            </th:block>
+                            
                         </table>
                         
                         <div class="row justify-content-end py-2">
