@@ -153,6 +153,11 @@
                 <tr  th:each="tempSensors : ${theSensors}">
                     <td th:text="${tempSensors.id}">
                     <td th:text="${tempSensors.name}">
+                    <td th:switch="${tempSensors.status}">
+                        <!-- <p th:text="${theSensorDetails.status}">Status</p>-->
+                        <p th:case="true" class="text-success"><i class="fas fa-check-circle"></i></p>
+                        <p th:case="false" class="text-danger"><i class="fas fa-times-circle"></i></p>
+                    </td>
                     <td th:text="${tempSensors.place}">
                     <td th:text="${tempSensors.importance}">
 

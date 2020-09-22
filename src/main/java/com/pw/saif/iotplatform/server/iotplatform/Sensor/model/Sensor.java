@@ -46,4 +46,7 @@ import lombok.*;
 
     @Column(name="descriptions")
     public String descriptions;
+
+    @Column(name="status")
+    public Boolean status;
 }
