@@ -146,7 +146,7 @@
                         </ul>
                     </div>  
                
-            <div class="col-lg-9 m-0">
+            <div class="col-lg-9 mb-2">
               <div class="card">
                 <div class="card-body">
                   <div class="tab-content">
@@ -201,7 +201,7 @@
                           <label class="col-3">Descriptions:</label>
                           <div class="col">
                             <textarea th:placeholder="${theSensorDetails.descriptions}" name="profile-bio" class="form-control" rows="4"></textarea>
-                            <small>This will be displayed on your public profile</small>
+                            <small>Brief information about the device status</small>
                           </div>
                         </div>
                         <div class="row justify-content-end">
@@ -209,7 +209,7 @@
                         </div>
                      
                     </div>
-                      <!-- START-->
+                     
                     <div class="tab-pane fade" role="tabpanel" id="user">
                         <p>User List:</p>
                         <table>
@@ -247,58 +247,37 @@
                           <button type="submit" class="btn btn-dark">Add</button>
                         </div>
                     </div>
-                      <!-- STOP-->
+                      <!-- START-->
                     <div class="tab-pane fade" role="tabpanel" id="notifications">
-                      <form>
-                        <h6>Activity Notifications</h6>
-                        <div class="form-group">
-                          <div class="custom-control custom-checkbox custom-checkbox-switch">
-                            <input type="checkbox" class="custom-control-input" id="notify-1" checked>
-                            <label class="custom-control-label" for="notify-1">Someone assigns me to a task</label>
+                        <h5>Alarm</h5>
+
+                        <div class="form-group row align-items-center">
+                          <label class="col-3">Response time [s]:</label>
+                          <div class="col">
+                          <p>50</p>
                           </div>
                         </div>
-                        <div class="form-group">
-                          <div class="custom-control custom-checkbox custom-checkbox-switch">
-                            <input type="checkbox" class="custom-control-input" id="notify-2" checked>
-                            <label class="custom-control-label" for="notify-2">Someone mentions me in a conversation</label>
+
+                        <div class="form-group row align-items-center">
+                          <label class="col-3">Maximum value:</label>
+                          <div class="col">
+                          <p>120</p>
                           </div>
                         </div>
-                        <div class="form-group">
-                          <div class="custom-control custom-checkbox custom-checkbox-switch">
-                            <input type="checkbox" class="custom-control-input" id="notify-3" checked>
-                            <label class="custom-control-label" for="notify-3">Someone adds me to a project</label>
+
+                        <div class="form-group row align-items-center">
+                          <label class="col-3">Minimum value:</label>
+                          <div class="col">
+                          <p>-30</p>
                           </div>
                         </div>
-                        <div class="form-group mb-md-4">
-                          <div class="custom-control custom-checkbox custom-checkbox-switch">
-                            <input type="checkbox" class="custom-control-input" id="notify-4">
-                            <label class="custom-control-label" for="notify-4">Activity on a project I am a member of</label>
-                          </div>
-                        </div>
-                        <h6>Service Notifications</h6>
-                        <div class="form-group">
-                          <div class="custom-control custom-checkbox custom-checkbox-switch">
-                            <input type="checkbox" class="custom-control-input" id="notify-5">
-                            <label class="custom-control-label" for="notify-5">Monthly newsletter</label>
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <div class="custom-control custom-checkbox custom-checkbox-switch">
-                            <input type="checkbox" class="custom-control-input" id="notify-6" checked>
-                            <label class="custom-control-label" for="notify-6">Major feature enhancements</label>
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <div class="custom-control custom-checkbox custom-checkbox-switch">
-                            <input type="checkbox" class="custom-control-input" id="notify-7">
-                            <label class="custom-control-label" for="notify-7">Minor updates and bug fixes</label>
-                          </div>
-                        </div>
+
                         <div class="row justify-content-end">
-                          <button type="submit" class="btn btn-primary">Save preferences</button>
+                          <button type="submit" class="btn btn-dark">Edit</button>
                         </div>
-                      </form>
                     </div>
+
+                    <!-- STOP-->
                     <div class="tab-pane fade" role="tabpanel" id="billing">
                       <form>
                         <h6>Plan Details</h6>
