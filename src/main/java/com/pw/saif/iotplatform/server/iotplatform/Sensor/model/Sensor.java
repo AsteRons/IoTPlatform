@@ -1,5 +1,6 @@
 package com.pw.saif.iotplatform.server.iotplatform.Sensor.model;
 
+import com.pw.saif.iotplatform.server.iotplatform.Connection.model.Connection;
 import com.pw.saif.iotplatform.server.iotplatform.SensorsData.model.SensorData;
 import com.pw.saif.iotplatform.server.iotplatform.Users.model.User;
 
@@ -8,8 +9,8 @@ import java.util.HashSet;
 import java.util.Set;
 import lombok.*;
 
-@Setter
-@Getter
+    @Setter
+    @Getter
     @NoArgsConstructor
     @AllArgsConstructor
     @Entity
@@ -28,6 +29,9 @@ import lombok.*;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "sensor")
     private Set<SensorData> sensorData = new HashSet<>();
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "sensor")
+    private Set<Connection> connection = new HashSet<>();
 
     @ManyToMany(mappedBy ="sensor")
     private Set<User> user = new HashSet<>();

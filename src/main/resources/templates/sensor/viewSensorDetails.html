@@ -138,7 +138,7 @@
                             <a class="nav-link" id="notifications-tab" data-toggle="tab" href="#notifications" role="tab" aria-controls="notifications" aria-selected="false">Alarm</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" id="billing-tab" data-toggle="tab" href="#billing" role="tab" aria-controls="billing" aria-selected="false">Connection</a>
+                            <a class="nav-link" id="connection-tab" data-toggle="tab" href="#connection" role="tab" aria-controls="connection" aria-selected="false">Connection</a>
                             </li>
                             <li class="nav-item">
                             <a class="nav-link" id="integrations-tab" data-toggle="tab" href="#integrations" role="tab" aria-controls="integrations" aria-selected="false">Data</a>
@@ -213,7 +213,6 @@
                     <div class="tab-pane fade" role="tabpanel" id="user">
                         <p>User List:</p>
                         <table>
-                            
                             <th:block  th:each="temptheUserList : ${theUserList}">
                              <div class="py-1">
                                 <tr>
@@ -242,12 +241,12 @@
                             </th:block>
                             
                         </table>
-                        
+
                         <div class="row justify-content-end py-2">
                           <button type="submit" class="btn btn-dark">Add</button>
                         </div>
                     </div>
-                      <!-- START-->
+
                     <div class="tab-pane fade" role="tabpanel" id="notifications">
                         <h5>Alarm</h5>
 
@@ -276,142 +275,120 @@
                           <button type="submit" class="btn btn-dark">Edit</button>
                         </div>
                     </div>
+                      <!-- START-->
+                    <div class="tab-pane fade" role="tabpanel" id="connection">
 
-                    <!-- STOP-->
-                    <div class="tab-pane fade" role="tabpanel" id="billing">
-                      <form>
-                        <h6>Plan Details</h6>
+                        <h6>Download data:</h6>
                         <div class="card text-center">
                           <div class="card-body">
                             <div class="row">
                               <div class="col">
                                 <div class="mb-4">
-                                  <h6>Free</h6>
-                                  <h5 class="display-4 d-block mb-2 font-weight-normal">$0</h5>
-                                  <span class="text-muted text-small">Per User / Per Month</span>
-                                </div>
-                                <ul class="list-unstyled">
-                                  <li>
-                                    Unlimited projects
-                                  </li>
-                                  <li>
-                                    1 team
-                                  </li>
-                                  <li>
-                                    4 team members
-                                  </li>
-                                </ul>
-                                <div class="custom-control custom-radio d-inline-block">
-                                  <input type="radio" id="plan-radio-1" name="customRadio" class="custom-control-input">
-                                  <label class="custom-control-label" for="plan-radio-1"></label>
-                                </div>
-                              </div>
-                              <div class="col">
-                                <div class="mb-4">
-                                  <h6>Pro</h6>
-                                  <h5 class="display-4 d-block mb-2 font-weight-normal">$10</h5>
-                                  <span class="text-muted text-small">Per User / Per Month</span>
-                                </div>
-                                <ul class="list-unstyled">
-                                  <li>
-                                    Unlimited projects
-                                  </li>
-                                  <li>
-                                    Unlmited teams
-                                  </li>
-                                  <li>
-                                    Unlimited team members
-                                  </li>
-                                </ul>
-                                <div class="custom-control custom-radio d-inline-block">
-                                  <input type="radio" id="plan-radio-2" name="customRadio" class="custom-control-input" checked>
-                                  <label class="custom-control-label" for="plan-radio-2"></label>
+                                    <table>
+                                        <th>
+                                            <div class="py-1">
+                                                <tr>
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div class="row align-items-center">
+                                                                <div class="col">
+                                                                    <div class="media align-items-center">
+                                                                        <img alt="Image" src="/image/sensor_icon.png" width="60" height="60" />
+                                                                        <div class="media-body ml-2">
+                                                                            <span class="h6 mb-0 d-block">Slack</span>
+                                                                            <span class="text-small text-muted">Permissions: Read, Write, Comment</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-auto">
+                                                                    <button class="btn btn-sm btn-danger">
+                                                                        Edit
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </tr>
+                                            </div>
+                                        </th>
+                                    </table>
+
                                 </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                      </form>
-                      <form class="mt-4">
-                        <h6>Payment Method</h6>
 
-                        <div class="card">
-                          <div class="card-body">
-                            <div class="row align-items-center">
-                              <div class="col-auto">
-                                <div class="custom-control custom-radio d-inline-block">
-                                  <input type="radio" id="method-radio-1" name="payment-method" class="custom-control-input" checked>
-                                  <label class="custom-control-label" for="method-radio-1"></label>
-                                </div>
+                        <h6 class="py-2">Send data:</h6>
+                          <div class="card text-center">
+                              <div class="card-body">
+                                  <div class="row">
+                                      <div class="col">
+                                          <div class="mb-4">
+                                              <table>
+                                                  <th>
+                                                      <div class="py-1">
+                                                          <tr>
+                                                              <div class="card">
+                                                                  <div class="card-body">
+                                                                      <div class="row align-items-center">
+                                                                          <div class="col">
+                                                                              <div class="media align-items-center">
+                                                                                  <img alt="Image" src="/image/sensor_icon.png" width="60" height="60" />
+                                                                                  <div class="media-body ml-2">
+                                                                                      <span class="h6 mb-0 d-block">Slack</span>
+                                                                                      <span class="text-small text-muted">Permissions: Read, Write, Comment</span>
+                                                                                  </div>
+                                                                              </div>
+                                                                          </div>
+                                                                          <div class="col-auto">
+                                                                              <button class="btn btn-sm btn-danger">
+                                                                                  Edit
+                                                                              </button>
+                                                                          </div>
+                                                                      </div>
+                                                                  </div>
+                                                              </div>
+                                                          </tr>
+                                                      </div>
+                                                  </th>
+                                              </table>
+                                              <table>
+                                                  <th>
+                                                      <div class="py-1">
+                                                          <tr>
+                                                              <div class="card">
+                                                                  <div class="card-body">
+                                                                      <div class="row align-items-center">
+                                                                          <div class="col">
+                                                                              <div class="media align-items-center">
+                                                                                  <img alt="Image" src="/image/server.png" width="60" height="60" />
+                                                                                  <div class="media-body ml-2">
+                                                                                      <span class="h6 mb-0 d-block">Slack</span>
+                                                                                      <span class="text-small text-muted">Permissions: Read, Write, Comment</span>
+                                                                                  </div>
+                                                                              </div>
+                                                                          </div>
+                                                                          <div class="col-auto">
+                                                                              <button class="btn btn-sm btn-danger">
+                                                                                  Edit
+                                                                              </button>
+                                                                          </div>
+                                                                      </div>
+                                                                  </div>
+                                                              </div>
+                                                          </tr>
+                                                      </div>
+                                                  </th>
+                                              </table>
+                                          </div>
+                                      </div>
+                                  </div>
                               </div>
-                              <div class="col-auto">
-                                <img alt="Image" src="assets/img/logo-payment-visa.svg" class="avatar rounded-0" />
-                              </div>
-                              <div class="col d-flex align-items-center">
-                                <span>•••• •••• •••• 8372</span>
-                                <small class="ml-2">Exp: 06/21</small>
-                              </div>
-                              <div class="col-auto">
-                                <button class="btn btn-sm btn-danger">
-                                  Remove Card
-                                </button>
-                              </div>
-                            </div>
                           </div>
-                        </div>
 
-                        <div class="card">
-                          <div class="card-body">
-                            <div class="row align-items-center">
-                              <div class="col-auto">
-                                <div class="custom-control custom-radio d-inline-block">
-                                  <input type="radio" id="method-radio-2" name="payment-method" class="custom-control-input">
-                                  <label class="custom-control-label" for="method-radio-2"></label>
-                                </div>
-                              </div>
-                              <div class="col-auto">
-                                <img alt="Image" src="assets/img/logo-payment-amex.svg" class="avatar rounded-0" />
-                              </div>
-                              <div class="col d-flex align-items-center">
-                                <span>•••• •••• •••• 9918</span>
-                                <small class="ml-2">Exp: 02/20</small>
-                              </div>
-                              <div class="col-auto">
-                                <button class="btn btn-sm btn-danger">
-                                  Remove Card
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="card">
-                          <div class="card-body">
-                            <div class="row align-items-center">
-                              <div class="col-auto">
-                                <div class="custom-control custom-radio d-inline-block">
-                                  <input type="radio" id="method-radio-3" name="payment-method" class="custom-control-input">
-                                  <label class="custom-control-label" for="method-radio-3"></label>
-                                </div>
-                              </div>
-                              <div class="col-auto">
-                                <img alt="Image" src="assets/img/logo-payment-paypal.svg" class="avatar rounded-0" />
-                              </div>
-                              <div class="col d-flex align-items-center">
-                                <span>david.whittaker@pipeline.io</span>
-
-                              </div>
-                              <div class="col-auto">
-                                <button class="btn btn-sm btn-primary">
-                                  Manage account
-                                </button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                      </form>
                     </div>
+                      <!-- STOP-->
                     <div class="tab-pane fade" role="tabpanel" id="integrations">
 
                       <div class="card">
