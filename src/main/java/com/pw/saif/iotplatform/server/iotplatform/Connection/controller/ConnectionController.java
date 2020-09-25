@@ -36,7 +36,7 @@ public class ConnectionController {
 
 
     //Pobranie pomiaru JSON HTTP
-    @RequestMapping("/{id}/pomiar")
+    @RequestMapping("/{id}/measurement")
     public SensorData viewUser(@PathVariable String id) {
 
         SensorData sensorData = sensorDataService.findById(Integer.valueOf(id));
@@ -44,7 +44,7 @@ public class ConnectionController {
     }
 
     // Zapis danych JSON HTTP
-    @PostMapping("/{idSensor}/{idtoken}/pomiar")
+    @PostMapping("/{idSensor}/{idtoken}/measurement")
     public ResponseEntity postController(
             @RequestBody SensorData sensorData, @PathVariable int idtoken, @PathVariable int idSensor) {
         Sensor sensor = sensorService.findById(idSensor);
