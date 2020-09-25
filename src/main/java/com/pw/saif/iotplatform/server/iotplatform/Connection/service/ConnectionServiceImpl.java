@@ -4,10 +4,12 @@ import com.pw.saif.iotplatform.server.iotplatform.Connection.dao.ConnectionRepos
 import com.pw.saif.iotplatform.server.iotplatform.Connection.model.Connection;
 import com.pw.saif.iotplatform.server.iotplatform.Sensor.model.Sensor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class ConnectionServiceImpl implements ConnectionService {
 
 

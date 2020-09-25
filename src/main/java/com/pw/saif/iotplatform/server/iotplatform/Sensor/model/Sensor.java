@@ -1,5 +1,6 @@
 package com.pw.saif.iotplatform.server.iotplatform.Sensor.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.pw.saif.iotplatform.server.iotplatform.Connection.model.Connection;
 import com.pw.saif.iotplatform.server.iotplatform.SensorsData.model.SensorData;
 import com.pw.saif.iotplatform.server.iotplatform.Users.model.User;
@@ -28,6 +29,7 @@ import lombok.*;
     public String url;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "sensor")
+    @JsonManagedReference
     private Set<SensorData> sensorData = new HashSet<>();
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "sensor")
@@ -38,6 +40,9 @@ import lombok.*;
 
     @Column(name="name")
     public String name;
+
+     @Column(name="sensornumber")
+     public int sensornumber;
 
     @Column(name="place")
     public String place;
