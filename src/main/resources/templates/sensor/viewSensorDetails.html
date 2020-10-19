@@ -205,7 +205,7 @@
                           </div>
                         </div>
                         <div class="row justify-content-end">
-                          <button class="btn btn-dark">Edit</button>
+                            <a th:href="'/sensor/' + ${theSensorDetails.id} + '/details/edit'" class="btn btn-sm btn-success"role="button" aria-disabled="true">Edit</a>
                         </div>
                      
                     </div>
@@ -229,9 +229,8 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-auto">
-                                                    <button class="btn btn-sm btn-danger">
-                                                        Edit
-                                                    </button>
+                                                    <a th:href="'/sensor/' + ${theSensorDetails.id} + '/user/' + ${temptheUserList.id} + '/edit'" class="btn btn-sm btn-success"role="button" aria-disabled="true">Edit</a>
+                                                    <a th:href="'/sensor/' + ${theSensorDetails.id} + '/user/' + ${temptheUserList.id} + '/delete'" class="btn btn-sm btn-danger"role="button" aria-disabled="true">Delete</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -243,13 +242,12 @@
                         </table>
 
                         <div class="row justify-content-end py-2">
-                          <button type="submit" class="btn btn-dark">Add</button>
+                            <a th:href="'/sensor/' + ${theSensorDetails.id} + '/user/add'" class="btn btn-dark"role="button" aria-disabled="true">Add</a>
                         </div>
                     </div>
 
                     <div class="tab-pane fade" role="tabpanel" id="notifications">
-                        <h5>Alarm</h5>
-
+                        <h5>Device alarm parameters: </h5>
                         <div class="form-group row align-items-center">
                           <label class="col-3">Response time [s]:</label>
                           <div class="col">
@@ -271,8 +269,13 @@
                           </div>
                         </div>
 
-                        <div class="row justify-content-end">
-                          <button type="submit" class="btn btn-dark">Edit</button>
+                        <h6>Additional notifications installed:</h6>
+                        <ul class="list-group">
+                            <li class="list-group-item">E-mail notification</li>
+                            <li class="list-group-item">SMS notification</li>
+                        </ul>
+                        <div class="row justify-content-end py-1">
+                            <a th:href="'/sensor/' + ${theSensorDetails.id} + '/notification/edit'" class="btn btn-dark"role="button" aria-disabled="true">Edit</a>
                         </div>
                     </div>
                       <!-- START-->
@@ -295,14 +298,14 @@
                                                                     <div class="media align-items-center">
                                                                         <img alt="Image" src="/image/sensor_icon.png" width="60" height="60" />
                                                                         <div class="media-body ml-2">
-                                                                            <span class="h6 mb-0 d-block">Slack</span>
+                                                                            <span class="h6 mb-0 d-block">Sensor</span>
                                                                             <span class="text-small text-muted">Permissions: Read, Write, Comment</span>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-auto">
-                                                                    <a href="#" class="btn btn-sm btn-success"role="button" aria-disabled="true">Add</a>
-                                                                    <a href="#" class="btn btn-sm btn-danger"role="button" aria-disabled="true">Edit</a>
+                                                                    <a th:href="'/connection/receiver/sensor/' + ${theSensorDetails.id} + '/add/1'" class="btn btn-sm btn-success"role="button" aria-disabled="true">Add</a>
+                                                                    <a th:href="'/connection/receiver/sensor/' + ${theSensorDetails.id} + '/edit/1'" class="btn btn-sm btn-danger"role="button" aria-disabled="true">Edit</a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -335,14 +338,14 @@
                                                                               <div class="media align-items-center">
                                                                                   <img alt="Image" src="/image/sensor_icon.png" width="60" height="60" />
                                                                                   <div class="media-body ml-2">
-                                                                                      <span class="h6 mb-0 d-block">Slack</span>
+                                                                                      <span class="h6 mb-0 d-block">Sensor</span>
                                                                                       <span class="text-small text-muted">Permissions: Read, Write, Comment</span>
                                                                                   </div>
                                                                               </div>
                                                                           </div>
                                                                           <div class="col-auto">
-                                                                              <a href="#" class="btn btn-sm btn-success"role="button" aria-disabled="true">Add</a>
-                                                                              <a href="#" class="btn btn-sm btn-danger"role="button" aria-disabled="true">Edit</a>
+                                                                              <a th:href="'/connection/sender/sensor/' + ${theSensorDetails.id} + '/add/1'" class="btn btn-sm btn-success"role="button" aria-disabled="true">Add</a>
+                                                                              <a th:href="'/connection/sender/sensor/' + ${theSensorDetails.id} + '/edit/1'" class="btn btn-sm btn-danger"role="button" aria-disabled="true">Edit</a>
                                                                           </div>
                                                                       </div>
                                                                   </div>
@@ -362,14 +365,14 @@
                                                                               <div class="media align-items-center">
                                                                                   <img alt="Image" src="/image/server.png" width="60" height="60" />
                                                                                   <div class="media-body ml-2">
-                                                                                      <span class="h6 mb-0 d-block">Slack</span>
+                                                                                      <span class="h6 mb-0 d-block">Server</span>
                                                                                       <span class="text-small text-muted">Permissions: Read, Write, Comment</span>
                                                                                   </div>
                                                                               </div>
                                                                           </div>
                                                                           <div class="col-auto">
-                                                                              <a href="#" class="btn btn-sm btn-success"role="button" aria-disabled="true">Add</a>
-                                                                              <a href="#" class="btn btn-sm btn-danger"role="button" aria-disabled="true">Edit</a>
+                                                                              <a th:href="'/connection/sender/server/' + ${theSensorDetails.id} + '/add/1'" class="btn btn-sm btn-success"role="button" aria-disabled="true">Add</a>
+                                                                              <a th:href="'/connection/sender/server/' + ${theSensorDetails.id} + '/edit/1'" class="btn btn-sm btn-danger"role="button" aria-disabled="true">Edit</a>
                                                                           </div>
                                                                       </div>
                                                                   </div>
@@ -388,6 +391,12 @@
                       <!-- STOP-->
                     <div class="tab-pane fade" role="tabpanel" id="integrations">
 
+                        <h5>Algorithms installed</h5>
+                            ...
+                        <div class="row justify-content-end">
+                            <button type="submit" class="btn btn-dark">Edit</button>
+
+                        </div>
                     </div>
                   </div>
                 </div>
