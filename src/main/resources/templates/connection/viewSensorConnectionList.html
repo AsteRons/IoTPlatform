@@ -99,8 +99,8 @@
                         <ul class="nav nav-small flex-column">
                             <li class="nav-item">
                                 <div class="menu-select-1 px-4">
-                                    <a class="nav-link" href="sensors.pl">Sensors</a>
-                                    <a class="nav-link" href="sensors.pl">Applications</a>
+                                    <a class="nav-link" href="/connection/sensor/all">Sensors</a>
+                                    <a class="nav-link" href="/connection/application/all">Applications</a>
                                 </div>
                             </li>
                         </ul>
@@ -141,13 +141,15 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr  th:each="tempSensorData : ${sensorData}">
-                    <td th:text="${tempSensorData.id}">
-                    <td th:text="${tempSensorData.sensor.id}">
-                    <td th:text="${tempSensorData.ntuValue}">
-                    <td th:text="${tempSensorData.timestamp}">
-                    <td th:text="${tempSensorData.sensor.id}">
-
+                <tr  th:each="tempConnectionList : ${theConnectionList}">
+                    <td th:text="${tempConnectionList.id}">
+                    <td th:text="${tempConnectionList.name}">
+                    <td th:text="${tempConnectionList.type}">
+                    <td th:text="${tempConnectionList.endpoint}">
+                    <td th:text="${tempConnectionList.port}">
+                    <td th:text="${tempConnectionList.hostname}">
+                    <td th:text="${tempConnectionList.sensor.id}">
+                    <td th:text="${tempConnectionList.timeout}">
                 </tr>
                 </tbody>
             </table>

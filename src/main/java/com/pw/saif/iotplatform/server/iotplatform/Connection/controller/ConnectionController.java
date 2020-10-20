@@ -58,18 +58,22 @@ public class ConnectionController {
 
     // Lista wszystkich połączeń
     @RequestMapping("/sensor/all")
-    public String viewConnection(@PathVariable String id) {
+    public String viewConnection(@PathVariable String id, ModelMap theModel) {
 
-        SensorData sensorData = sensorDataService.findById(Integer.valueOf(id));
-        return "sensor/viewSensorDetails";
+        List<Connection> theConnectionList = connectionService.findAll();
+
+        theModel.addAttribute("theConnectionList", theConnectionList);
+
+        return "connection/viewSensorConnectionList";
     }
+
 
     // Lista połączeń dla określonego sensora
     @RequestMapping("/sensor/{id}")
     public String viewConnectionSensor(@PathVariable String id) {
 
-        SensorData sensorData = sensorDataService.findById(Integer.valueOf(id));
-        return "sensor/viewSensorDetails";
+
+        return "connection/viewSensorConnectionList";
     }
 
 }
