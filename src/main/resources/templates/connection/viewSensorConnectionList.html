@@ -123,6 +123,37 @@
 
         <!--END Menu-->
 
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <h2>Connections list"</h2>
+            <div class="table-responsive"></div>
+            <table class="table  table-hover table-striped table-sm">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Endpoint</th>
+                    <th>Port</th>
+                    <th>Hostname</th>
+                    <th>Sensor</th>
+                    <th>Timeout</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr  th:each="tempSensorData : ${sensorData}">
+                    <td th:text="${tempSensorData.id}">
+                    <td th:text="${tempSensorData.sensor.id}">
+                    <td th:text="${tempSensorData.ntuValue}">
+                    <td th:text="${tempSensorData.timestamp}">
+                    <td th:text="${tempSensorData.sensor.id}">
+
+                </tr>
+                </tbody>
+            </table>
+    </div>
+    </main>
+
 </div>
 </div>
 <!--END-->

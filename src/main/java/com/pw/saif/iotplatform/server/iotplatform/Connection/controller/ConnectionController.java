@@ -37,7 +37,7 @@ public class ConnectionController {
 
     //Pobranie pomiaru JSON HTTP
     @RequestMapping("/{id}/measurement")
-    public SensorData viewUser(@PathVariable String id) {
+    public SensorData sendMeasurementSensor(@PathVariable String id) {
 
         SensorData sensorData = sensorDataService.findById(Integer.valueOf(id));
         return sensorData;
@@ -45,7 +45,7 @@ public class ConnectionController {
 
     // Zapis danych JSON HTTP
     @PostMapping("/{idSensor}/{idtoken}/measurement")
-    public ResponseEntity postController(
+    public ResponseEntity saveDataJSON(
             @RequestBody SensorData sensorData, @PathVariable int idtoken, @PathVariable int idSensor) {
         Sensor sensor = sensorService.findById(idSensor);
         if(sensor.getSensornumber() == idtoken){
@@ -54,6 +54,22 @@ public class ConnectionController {
             return ResponseEntity.ok(HttpStatus.OK);
         }
         else return new ResponseEntity(HttpStatus.BAD_REQUEST);
+    }
+
+    // Lista wszystkich połączeń
+    @RequestMapping("/sensor/all")
+    public String viewConnection(@PathVariable String id) {
+
+        SensorData sensorData = sensorDataService.findById(Integer.valueOf(id));
+        return "sensor/viewSensorDetails";
+    }
+
+    // Lista połączeń dla określonego sensora
+    @RequestMapping("/sensor/{id}")
+    public String viewConnectionSensor(@PathVariable String id) {
+
+        SensorData sensorData = sensorDataService.findById(Integer.valueOf(id));
+        return "sensor/viewSensorDetails";
     }
 
 }
