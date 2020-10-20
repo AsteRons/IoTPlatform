@@ -9,6 +9,9 @@ body {
   vertical-align: text-bottom;
 }
 
+.menu-text-size {
+  font-size: 1rem
+}
 /* Menu top*/
 
 .menu-select {
