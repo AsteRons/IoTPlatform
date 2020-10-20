@@ -10,15 +10,16 @@ import com.pw.saif.iotplatform.server.iotplatform.Users.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Set;
 
-@RestController
-@RequestMapping("/connection")
-public class ConnectionController {
+@Controller
+@RequestMapping("/connection/view/")
+public class ConnectionViewController {
 
 
 
@@ -28,33 +29,30 @@ public class ConnectionController {
 
 
 
-    public ConnectionController(ConnectionService connectionService, SensorService sensorService, SensorDataService sensorDataService) {
+    public ConnectionViewController(ConnectionService connectionService, SensorService sensorService, SensorDataService sensorDataService) {
         this.connectionService = connectionService;
         this.sensorService = sensorService;
         this.sensorDataService = sensorDataService;
     }
 
 
-    //Pobranie pomiaru JSON HTTP
-    @RequestMapping("/{id}/measurement")
-    public SensorData sendMeasurementSensor(@PathVariable String id) {
 
-        SensorData sensorData = sensorDataService.findById(Integer.valueOf(id));
-        return sensorData;
+    // Lista wszystkich połączeń
+    @RequestMapping("/sensor/all")
+    public String viewConnection(ModelMap theModel) {
+
+        List<Connection> theConnectionList = connectionService.findAll();
+        theModel.addAttribute("theConnectionList", theConnectionList);
+
+        return "connection/viewSensorConnectionList";
     }
 
-    // Zapis danych JSON HTTP
-    @PostMapping("/{idSensor}/{idtoken}/measurement")
-    public ResponseEntity saveDataJSON(
-            @RequestBody SensorData sensorData, @PathVariable int idtoken, @PathVariable int idSensor) {
-        Sensor sensor = sensorService.findById(idSensor);
-        if(sensor.getSensornumber() == idtoken){
-            sensorData.setSensor(sensor);
-            sensorDataService.save(sensorData);
-            return ResponseEntity.ok(HttpStatus.OK);
-        }
-        else return new ResponseEntity(HttpStatus.BAD_REQUEST);
-    }
 
+    // Lista połączeń dla określonego sensora
+    @RequestMapping("/sensor/{id}")
+    public String viewConnectionSensor(ModelMap theModel) {
+
+        return "connection/viewSensorConnectionList.";
+    }
 
 }
